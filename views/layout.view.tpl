@@ -17,6 +17,7 @@
             <div class="menu">
                 <ul>
                     <li><a href="index.php?page=home">Home</a></li>
+                    <li><a href="index.php?page=prdbacklog">Product BackLog</a></li>
                 </ul>
             </div>
             <div class="contenido">

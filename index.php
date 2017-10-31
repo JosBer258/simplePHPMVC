@@ -25,6 +25,10 @@
         case "prdbacklog":
           require_once("controllers/prdbacklog.control.php");
           break;
+          case "edificios":
+          require_once("controllers/edificios.control.php");
+          break;
+
         default:
             require_once("controllers/error.control.php");
     }

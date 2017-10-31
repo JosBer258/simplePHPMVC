@@ -18,6 +18,7 @@
                 <ul>
                     <li><a href="index.php?page=home">Home</a></li>
                     <li><a href="index.php?page=prdbacklog">Product BackLog</a></li>
+                      <li><a href="index.php?page=edificios">Edificios BackLog</a></li>
                 </ul>
             </div>
             <div class="contenido">

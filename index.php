@@ -22,13 +22,15 @@
             //llamar al controlador
             require_once("controllers/home.control.php");
             break;
-        case "prdbacklog":
-          require_once("controllers/prdbacklog.control.php");
-          break;
+          case "prdbacklog":
+            require_once("controllers/prdbacklog.control.php");
+            break;
           case "edificios":
-          require_once("controllers/edificios.control.php");
-          break;
-
+            require_once("controllers/edificios.control.php");
+            break;
+          case "edificio":
+            require_once("controllers/edificio.control.php");
+            break;
         default:
             require_once("controllers/error.control.php");
     }

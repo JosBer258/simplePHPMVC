@@ -2,23 +2,35 @@
 /* Edificios Controller
  * 2017-10-30
  * Created By OJBA
- * Last Modification 2014-10-14 20:04
+ * Last Modification 2017-10-30 19:028
  */
   require_once("libs/template_engine.php");
-  
-  //edificios
-  //$data =ArrayAccess(array/edificiso=> obteneredificios('%'.))
+  require_once("models/edificios.model.php");
 
   function run(){
-$datospersonales = array(
-  "nombre"=>"Ordes",
-  "correo"=>"Ooo"
-);
-    addCssRef("public/css/home.css");
-    renderizar("edificios/edificios",$datospersonales);
+    //addCssRef("public/css/home.css");
+    $edfcod = "";
+    $edfdsc = "";
+    if(isset($_SESSION["edificios_edfcod"])){
+      $edfcod = $_SESSION["edificios_edfcod"];
+      $edfdsc = $_SESSION["edificios_edfdsc"];
+    }
+
+    if(isset($_POST["btnFiltrar"])){
+      $edfcod = $_POST["fltCodEdificio"];
+      $edfdsc = $_POST["fltDscEdificio"];
+      $_SESSION["edificios_edfcod"] = $edfcod;
+      $_SESSION["edificios_edfdsc"] = $edfdsc;
+    }
+
+    $data = array("edificios"=>obtenerEdificios($edfcod,$edfdsc),
+                  "edfcod" => $edfcod,
+                  "edfdsc" => $edfdsc
+                  ); // end array
+    
+    renderizar("edificios/edificios",$data);
   }
 
-// Desarrollar una pagina llamada New Product BackLog. prdBacklog, creer ruta, controlador
-//
+
   run();
 ?>
